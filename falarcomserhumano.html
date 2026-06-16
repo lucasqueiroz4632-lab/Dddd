@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Porto Seguro | Contato WhatsApp</title>
+    <style>
+        :root {
+            --neon-blue: #60a5fa;
+            --bg-dark: #0f172a;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            font-family: 'Segoe UI', sans-serif;
+            background: var(--bg-dark);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .chat-box {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 20px;
+            width: 350px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            margin-bottom: 60px;
+        }
+
+        h2 {
+            text-align: center;
+            color: white;
+            margin-bottom: 5px;
+            text-shadow: 0 0 10px var(--neon-blue);
+        }
+
+        .protocolo-text {
+            text-align: center;
+            font-size: 0.85rem;
+            opacity: 0.7;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(0, 0, 0, 0.2);
+            color: white;
+            font-size: 1rem;
+            box-sizing: border-box;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: var(--neon-blue);
+            box-shadow: 0 0 8px var(--neon-blue);
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: var(--neon-blue);
+            color: #000;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background: #93c5fd;
+            box-shadow: 0 0 15px var(--neon-blue);
+            transform: scale(1.02);
+        }
+
+        .meu-rodape {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(8px);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 15px 0;
+            text-align: center;
+        }
+
+        .btn-menu {
+            color: var(--neon-blue);
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="chat-box">
+        <h2>Atendimento Seguro</h2>
+        <div class="protocolo-text">Protocolo: <span id="numProtocolo">00000</span></div>
+
+        <div class="form-group">
+            <label for="nomeCliente">Seu Nome:</label>
+            <input type="text" id="nomeCliente" placeholder="Digite seu nome">
+        </div>
+
+        <div class="form-group">
+            <label for="msgCliente">Mensagem:</label>
+            <textarea id="msgCliente" rows="4" placeholder="Como posso te ajudar?"></textarea>
+        </div>
+
+        <button onclick="enviarWhatsapp()">Iniciar Conversa 💬</button>
+    </div>
+
+    <script>
+        alert("por favor não maltrate o atendente e toda a suas conversas podem e vão ser ussadas processa voce e por favo informe o protocolo para o atendente");
+        
+        const anoAtual = 2026;
+        let baseProtocolo = 1542;
+        let calculoProtocolo = (baseProtocolo * 3) + (anoAtual - 2000); 
+        document.getElementById("numProtocolo").innerText = calculoProtocolo;
+
+        function enviarWhatsapp() {
+            let nome = document.getElementById("nomeCliente").value;
+            let mensagem = document.getElementById("msgCliente").value;
+
+            if (nome === "" || mensagem === "") {
+                alert("Por favor, preencha todos os campos!");
+                return;
+            }
+
+            const numeroWhats = "5531985940118"; 
+            let textoFinal = "Olá! Me chamo *" + encodeURIComponent(nome) + "*%0A" +
+                             "*Protocolo:* " + calculoProtocolo + "%0A%0A" +
+                             "*Mensagem:* " + encodeURIComponent(mensagem);
+
+            window.open("https://wa.me/" + numeroWhats + "?text=" + textoFinal, "_blank");
+        }
+    </script>
+
+    <footer class="meu-rodape">
+        <p><a href="index.html" class="btn-menu">Retornar ao Menu Principal</a></p>
+    </footer>
+</body>
+</html>

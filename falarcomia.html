@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Espaço de Escuta | IA</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        :root {
+            --bg-calm: #0f172a;
+            --soft-text: #cbd5e1;
+            --accent-blue: #38bdf8;
+            --ia-bubble: #1e293b;
+        }
+
+        body {
+            margin: 0;
+            background: var(--bg-calm);
+            color: var(--soft-text);
+            font-family: 'Segoe UI', sans-serif;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        header {
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .chat-area {
+            flex: 1;
+            overflow-y: auto;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-width: 800px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .bubble {
+            max-width: 80%;
+            padding: 15px 20px;
+            border-radius: 20px;
+            line-height: 1.5;
+            font-size: 1rem;
+        }
+
+        .ia {
+            align-self: flex-start;
+            background: var(--ia-bubble);
+            border-bottom-left-radius: 2px;
+            color: white;
+            border: 1px solid rgba(56, 189, 248, 0.3);
+        }
+
+        .user {
+            align-self: flex-end;
+            background: var(--accent-blue);
+            color: #000;
+            border-bottom-right-radius: 2px;
+        }
+
+        .input-area {
+            padding: 30px;
+            background: #1e293b;
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        input {
+            width: 70%;
+            padding: 15px;
+            border-radius: 30px;
+            border: none;
+            outline: none;
+            background: #334155;
+            color: white;
+        }
+
+        button {
+            padding: 10px 25px;
+            border-radius: 30px;
+            border: none;
+            background: var(--accent-blue);
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .safe-badge {
+            font-size: 0.8rem;
+            color: #64748b;
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h2>🕊️ Seu Espaço Seguro</h2>
+    <p>Abaixo, você pode dizer tudo o que está no seu coração. Eu estou aqui para ouvir.</p>
+</header>
+
+<div class="chat-area" id="chat">
+    <div class="bubble ia">
+        Olá. Percebi que você veio buscar um momento de paz. Saiba que este ambiente é totalmente privado. O que está passando pela sua mente agora? Pode falar sobre qualquer coisa.
+    </div>
+</div>
+
+<div class="safe-badge">🔒 Suas conversas com a IA são criptografadas e privadas.</div>
+
+<div class="input-area">
+    <input type="text" id="userInput" placeholder="Sinta-se à vontade para desabafar...">
+    <button onclick="sendMessage()">Enviar</button>
+</div>
+
+<script src="java.Js"></script> 
+
+</body>
+</html>

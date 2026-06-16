@@ -1,0 +1,12 @@
+/* Exemplo de como deve estar no CSS */
+#chat-container {
+    width: 95%; /* No celular ele ocupa quase tudo */
+    max-width: 600px; /* No PC ele não fica largo demais */
+    margin: 0 auto;
+}
+
+.bubble {
+    max-width: 85%; /* Garante que a bolha não bata na borda oposta */
+    padding: 10px;
+    font-size: 16px; /* Tamanho bom para leitura no touch */
+}
