@@ -13,7 +13,7 @@ async function sendMessage() {
     chat.scrollTop = chat.scrollHeight;
 
     try {
-        // CORRIGIDO: Agora aponta para o teu link do Ngrok para funcionar na Vercel!
+        // CORRIGIDO: Agora usa o link do seu ngrok para a Vercel conseguir conversar com o seu n8n!
         const response = await fetch('https://flattered-snowsuit-referable.ngrok-free.dev/webhook/e55db928-05ed-4801-9e7a-1de17d978201', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -35,7 +35,6 @@ async function sendMessage() {
             textoFinal = typeof data === 'string' ? data : JSON.stringify(data);
         }
 
-        // Limpa a tag de pensamento <think> se a IA do n8n enviar
         textoFinal = textoFinal.replace(/<think>[\s\S]*?<\/think>/g, '').trim();
 
         iaDiv.innerText = textoFinal;
