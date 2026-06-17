@@ -14,7 +14,7 @@ async function sendMessage() {
 
     try {
         // URL ATUALIZADA PARA NGROK
-        const response = await fetch('https://flattered-snowsuit-referable.ngrok-free.dev/webhook/e55db928-05ed-4801-9e7a-1de17d978201', {
+        const response = await fetch('http://localhost:5678/webhook/e55db928-05ed-4801-9e7a-1de17d978201', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ usuario_msg: message })

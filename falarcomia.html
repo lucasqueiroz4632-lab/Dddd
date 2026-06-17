@@ -177,7 +177,7 @@
 
 <footer class="footer-fixo">
     <div class="input-area">
-        <input type="text" id="userInput" placeholder="Sinta-se à vontade para desabafar...">
+        <input type="text" id="userInput" placeholder="Sinta-se à vontade para desabafar..." onkeypress="if(event.key === 'Enter') sendMessage()">
         <button onclick="sendMessage()">Enviar</button>
     </div>
     <p class="safe-badge">🔒 Suas conversas com a IA são criptografadas e privadas.</p>
