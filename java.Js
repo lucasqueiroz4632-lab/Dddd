@@ -13,7 +13,7 @@ async function sendMessage() {
     chat.scrollTop = chat.scrollHeight;
 
     try {
-        // URL ATUALIZADA PARA NGROK
+        // MUDADO DE LOCALHOST PARA NGROK PARA FUNCIONAR NA VERCEL
         const response = await fetch('http://localhost:5678/webhook/e55db928-05ed-4801-9e7a-1de17d978201', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -44,7 +44,7 @@ async function sendMessage() {
         console.error("Erro:", error);
         const errorDiv = document.createElement('div');
         errorDiv.className = 'bubble ia';
-        errorDiv.innerText = "Erro ao conectar com a IA. Verifique se o ngrok está aberto.";
+        errorDiv.innerText = "Erro ao conectar com a IA. Verifique se o n8n e o ngrok estão rodando.";
         chat.appendChild(errorDiv);
     }
     
